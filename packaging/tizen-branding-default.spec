@@ -25,7 +25,7 @@ cp %{SOURCE1001} .
 %install
 mkdir -p %{buildroot}%{_datadir}/branding/default/syslinux
 mkdir -p %{buildroot}%{_datadir}/branding/default/backgrounds
-mkdir -p %{buildroot}%{_datadir}/glib2/schemas
+mkdir -p %{buildroot}%{_datadir}/glib-2.0/schemas
 
 cp backgrounds/Blue_Dock_by_dimage.jpg %{buildroot}%{_datadir}/branding/default/backgrounds
 cp schema/background.xml %{buildroot}%{_datadir}/branding/default/backgrounds
