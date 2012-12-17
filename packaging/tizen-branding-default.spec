@@ -47,5 +47,5 @@ cp -a plymouth/tizen %{buildroot}%{_datadir}/plymouth/themes
 %manifest %{name}.manifest
 %{_datadir}/branding/default/syslinux
 %{_datadir}/plymouth/themes/tizen
-%{buildroot}/usr/share/glib-2.0/schemas/*.override
+/usr/share/glib-2.0/schemas/*.override
 %{_datadir}/branding/default/backgrounds
