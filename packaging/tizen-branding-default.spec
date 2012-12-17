@@ -28,7 +28,7 @@ mkdir -p %{buildroot}%{_datadir}/branding/default/backgrounds
 mkdir -p %{buildroot}%{_datadir}/glib2/schemas
 
 cp backgrounds/Blue_Dock_by_dimage.jpg %{buildroot}%{_datadir}/branding/default/backgrounds
-cp backgrounds/tizen.xml %{buildroot}%{_datadir}/branding/default/backgrounds
+cp backgrounds/background.xml %{buildroot}%{_datadir}/branding/default/backgrounds
 cp schema/tizen-branding.gschema.override %{buildroot}/usr/share/glib-2.0/schemas/
 
 
