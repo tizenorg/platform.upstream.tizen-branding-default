@@ -8,6 +8,7 @@ Group:          System/Base
 Source0:        %{name}-%{version}.tar.bz2
 Source1001:     %{name}.manifest
 BuildArch:      noarch
+Requires:       plymouth-plugin-script
 Recommends:     plymouth-plugin-two-step
 
 %description
@@ -26,7 +27,7 @@ mkdir -p %{buildroot}%{_datadir}/branding/default/syslinux
 mkdir -p %{buildroot}%{_datadir}/plymouth/themes
 cp syslinux/* %{buildroot}%{_datadir}/branding/default/syslinux
 cp -a plymouth/tizen %{buildroot}%{_datadir}/plymouth/themes
-
+cp syslinux/syslinux-vesa-splash.jpg %{buildroot}%{_datadir}/plymouth/themes/tizen/tizen.png
 
 %files
 %manifest %{name}.manifest
