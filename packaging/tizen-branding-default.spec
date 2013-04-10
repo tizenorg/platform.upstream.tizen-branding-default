@@ -1,7 +1,7 @@
 Name:           tizen-branding-default
-Version:        0.1
+Version:        0.2
 Release:        1
-License:        GPLv2+
+License:        GPL-2.0+
 Summary:        Default Branding files
 Url:            http://tizen.org
 Group:          System/Base
