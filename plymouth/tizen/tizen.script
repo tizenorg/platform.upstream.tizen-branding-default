@@ -1,17 +1,12 @@
 # Load the image
-wi = Image("tizen.png");
 
 # Get screen dimensions
 sw = Window.GetWidth();
 sh = Window.GetHeight();
 
 # Resize the image
-ri = wi.Scale(sw, sh);
 
 # Create a sprite for the image
-ws = Sprite(ri);
-
-ws.SetZ(-100);
 
 # Get a sprite for text
 ms = Sprite();
