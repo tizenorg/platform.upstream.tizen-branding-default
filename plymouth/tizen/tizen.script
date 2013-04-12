@@ -13,13 +13,36 @@ ms = Sprite();
 ms.SetPosition(sw * 0.45, sh * 0.3, 10000);
 
 fun mc(text) {
-	if (text == "Updating...") {
-		mi = Image.Text(text, 255, 255, 255);
-		ms.SetImage(mi.Scale(mi.GetWidth() * 2, mi.GetHeight() * 2));
-	}
+	mi = Image.Text(text, 255, 255, 255);
+	ms.SetImage(mi.Scale(mi.GetWidth() * 2, mi.GetHeight() * 2));
 }
 
-Plymouth.SetUpdateStatusFunction(mc);
+um = Hashes();
+im = Hashes();
+
+fun update_message(text)
+{
+	um.image = Image.Text(text, 255, 255, 255);
+	um.sprite = Sprite(um.image);
+	um.sprite.SetX(sw * 0.48);
+	um.sprite.SetY(sh * 0.45);
+}
+
+fun install_message(text)
+{
+	im.image = Image.Text(text, 255, 255, 255);
+	im.sprite = Sprite(im.image);
+	im.sprite.SetX(0);
+	im.sprite.SetY(0);
+}
+
+if (Plymouth.GetMode() == "boot") {
+	Plymouth.SetMessageFunction(install_message);
+}
+else if (Plymouth.GetMode() == "updates") {
+	Plymouth.SetUpdateStatusFunction(mc);
+	Plymouth.SetMessageFunction(update_message);
+}
 
 progress_box = Hashes();
 progress_bar = Hashes();
