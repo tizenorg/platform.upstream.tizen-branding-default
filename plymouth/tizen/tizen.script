@@ -10,11 +10,12 @@ sh = Window.GetHeight();
 
 # Get a sprite for text
 ms = Sprite();
-ms.SetPosition(sw * 0.45, sh * 0.3, 10000);
 
 fun mc(text) {
 	mi = Image.Text(text, 255, 255, 255);
-	ms.SetImage(mi.Scale(mi.GetWidth() * 2, mi.GetHeight() * 2));
+	mii = mi.Scale(mi.GetWidth() * 2, mi.GetHeight() * 2);
+	ms.SetImage(mii);
+	ms.SetPosition((sw - mii.GetWidth()) / 2, sh * 0.3, 10000);
 }
 
 um = Hashes();
@@ -24,7 +25,7 @@ fun update_message(text)
 {
 	um.image = Image.Text(text, 255, 255, 255);
 	um.sprite = Sprite(um.image);
-	um.sprite.SetX(sw * 0.48);
+	um.sprite.SetX((sw - um.image.GetWidth()) / 2);
 	um.sprite.SetY(sh * 0.45);
 }
 
