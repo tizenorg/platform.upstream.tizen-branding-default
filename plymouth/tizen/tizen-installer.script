@@ -1,0 +1,15 @@
+# Get screen dimensions
+sw = Window.GetWidth();
+sh = Window.GetHeight();
+
+im = Hashes();
+
+fun install_message(text)
+{
+	im.image = Image.Text(text, 255, 255, 255);
+	im.sprite = Sprite(im.image);
+	im.sprite.SetX(0);
+	im.sprite.SetY(0);
+}
+
+Plymouth.SetMessageFunction(install_message);

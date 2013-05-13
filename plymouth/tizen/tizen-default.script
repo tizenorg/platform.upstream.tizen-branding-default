@@ -1,0 +1,74 @@
+# Get screen dimensions
+sw = Window.GetWidth();
+sh = Window.GetHeight();
+
+# Get a sprite for text
+ms = Sprite();
+
+fun mc(text) {
+	mi = Image.Text(text, 255, 255, 255);
+	mii = mi.Scale(mi.GetWidth() * 2, mi.GetHeight() * 2);
+	ms.SetImage(mii);
+	ms.SetPosition((sw - mii.GetWidth()) / 2, sh * 0.3, 10000);
+}
+
+um = Hashes();
+bm = Hashes();
+
+fun boot_message(text) {
+	bm.image = Image.Text(text, 255, 255, 255);
+	bm.simage = bm.image.Scale(bm.image.GetWidth() * 2, bm.image.GetHeight() * 2);
+	bm.sprite = Sprite(bm.simage);
+	bm.sprite.SetX((sw - bm.image.GetWidth()) / 2);
+	bm.sprite.SetY(sh * 0.45);
+}
+
+fun update_message(text)
+{
+	um.image = Image.Text(text, 255, 255, 255);
+	um.sprite = Sprite(um.image);
+	um.sprite.SetX((sw - um.image.GetWidth()) / 2);
+	um.sprite.SetY(sh * 0.45);
+}
+
+if (Plymouth.GetMode() == "boot") {
+	Plymouth.SetMessageFunction(boot_message);
+}
+else if (Plymouth.GetMode() == "updates") {
+	Plymouth.SetUpdateStatusFunction(mc);
+	Plymouth.SetMessageFunction(update_message);
+}
+
+progress_box = Hashes();
+progress_bar = Hashes();
+progress = 0;
+progress_max = 0;
+
+fun create_progress_bar()
+{
+	progress_box.image = Image("progress_box.png");
+	progress_box.sprite = Sprite(progress_box.image);
+
+	progress_box.x = sw / 2 - progress_box.image.GetWidth() / 2;
+	progress_box.y = sh * 0.75 - progress_box.image.GetHeight() / 2;
+	progress_box.sprite.SetPosition(progress_box.x, progress_box.y, 0);
+
+	progress_bar.original_image = Image("progress_bar.png");
+	progress_bar.image = progress_bar.original_image.Scale(progress_bar.original_image.GetWidth() * 0.3, progress_bar.original_image.GetHeight());
+	progress_bar.sprite = Sprite(progress_bar.image);
+
+	progress_bar.x = sw / 2 - progress_bar.original_image.GetWidth() / 2;
+	progress_bar.y = sh / 2 * 1.5  - progress_box.image.GetHeight() / 2 + (progress_box.image.GetHeight() - progress_bar.original_image.GetHeight()) / 2;
+	progress_bar.sprite.SetPosition(progress_bar.x, progress_bar.y, 1);
+
+	progress_max = progress_box.image.GetWidth() - progress_bar.image.GetWidth();
+}
+
+fun refresh_callback ()
+{
+	progress = (progress + 1) % progress_max;
+	progress_bar.sprite.SetPosition(progress_bar.x + progress, progress_bar.y, 1);
+}
+
+create_progress_bar();
+Plymouth.SetRefreshFunction(refresh_callback);
