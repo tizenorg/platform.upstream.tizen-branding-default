@@ -19,7 +19,7 @@ fun boot_message(text) {
 	bm.image = Image.Text(text, 255, 255, 255);
 	bm.simage = bm.image.Scale(bm.image.GetWidth() * 2, bm.image.GetHeight() * 2);
 	bm.sprite = Sprite(bm.simage);
-	bm.sprite.SetX((sw - bm.image.GetWidth()) / 2);
+	bm.sprite.SetX((sw - bm.simage.GetWidth()) / 2);
 	bm.sprite.SetY(sh * 0.45);
 }
 
