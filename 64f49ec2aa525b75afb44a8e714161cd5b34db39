@@ -1,0 +1,9 @@
+Change-Id: I64f49ec2aa525b75afb44a8e714161cd5b34db39
+Code-Review+1: Patrick McCarty <patrick.mccarty@linux.intel.com>
+Code-Review+2: Anas Nashif <anas.nashif@intel.com>
+Verified+1: Anas Nashif <anas.nashif@intel.com>
+Submitted-by: Anas Nashif <anas.nashif@intel.com>
+Submitted-at: Thu, 13 Jun 2013 12:10:53 -0700
+Reviewed-on: https://review.tizen.org/gerrit/3990
+Project: platform/upstream/tizen-branding-default
+Branch: refs/heads/tizen
