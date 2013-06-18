@@ -1,3 +1,8 @@
+* Tue Jun 18 2013 William Douglas <william.douglas@intel.com> accepted/tizen/20130520.094409@64f49ec
+- Center text for boot
+- plymouth: Add boot indicator when loading Tizen
+- center text for updates
+
 * Wed Apr 10 2013 Anas Nashif <anas.nashif@intel.com> submit/trunk/20121218.004949@ff88acc
 - Update splash
 
