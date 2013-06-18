@@ -1,6 +1,6 @@
 Name:           tizen-branding-default
 Version:        0.2
-Release:        1
+Release:        0
 License:        GPL-2.0+
 Summary:        Default Branding files
 Url:            http://tizen.org
@@ -22,9 +22,9 @@ cp %{SOURCE1001} .
 
 
 %install
-mkdir -p %{buildroot}%{_datadir}/branding/default/syslinux
+%{__install} -d %{buildroot}%{_datadir}/branding/default/syslinux
 
-mkdir -p %{buildroot}%{_datadir}/plymouth/themes
+%{__install} -d %{buildroot}%{_datadir}/plymouth/themes
 cp syslinux/* %{buildroot}%{_datadir}/branding/default/syslinux
 cp -a plymouth/tizen %{buildroot}%{_datadir}/plymouth/themes
 cp syslinux/syslinux-vesa-splash.jpg %{buildroot}%{_datadir}/plymouth/themes/tizen/tizen.png
