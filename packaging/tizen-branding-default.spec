@@ -29,6 +29,12 @@ cp syslinux/* %{buildroot}%{_datadir}/branding/default/syslinux
 cp -a plymouth/tizen %{buildroot}%{_datadir}/plymouth/themes
 cp syslinux/syslinux-vesa-splash.jpg %{buildroot}%{_datadir}/plymouth/themes/tizen/tizen.png
 
+%post
+	%{_sbindir}/plymouth-set-default-theme -R tizen
+
+%postun
+	%{_sbindir}/plymouth-set-default-theme -R --reset
+	
 %files
 %manifest %{name}.manifest
 %{_datadir}/branding/default/syslinux
