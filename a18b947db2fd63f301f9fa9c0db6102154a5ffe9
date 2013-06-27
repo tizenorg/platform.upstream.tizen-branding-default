@@ -1,0 +1,10 @@
+Change-Id: Ia18b947db2fd63f301f9fa9c0db6102154a5ffe9
+Code-Review+2: Auke Kok <auke-jan.h.kok@intel.com>
+Code-Review+1: William Douglas <william.douglas@intel.com>
+Code-Review+1: Michael I Doherty <michael.i.doherty@intel.com>
+Verified+1: Michael I Doherty <michael.i.doherty@intel.com>
+Submitted-by: William Douglas <william.douglas@intel.com>
+Submitted-at: Thu, 27 Jun 2013 11:13:02 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4137
+Project: platform/upstream/tizen-branding-default
+Branch: refs/heads/tizen
